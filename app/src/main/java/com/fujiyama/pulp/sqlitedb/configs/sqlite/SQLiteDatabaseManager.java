@@ -4,7 +4,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class SQLiteDatabaseManager {
-    private static String TAG = SQLiteDatabaseManager.class.getSimpleName();
+    private static final String TAG = SQLiteDatabaseManager.class.getSimpleName();
 
     private int mConnectionCounter;
 

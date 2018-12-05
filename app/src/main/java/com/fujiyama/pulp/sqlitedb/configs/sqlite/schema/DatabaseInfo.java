@@ -1,5 +1,7 @@
 package com.fujiyama.pulp.sqlitedb.configs.sqlite.schema;
 
+import com.fujiyama.pulp.sqlitedb.configs.sqlite.schema.tables.Sample;
+
 public class DatabaseInfo {
     private static final String DATABASE_NAME = "sample.db";
     private static final int DATABASE_VERSION = 1;

@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        SQLiteDatabaseManager.initialize(new SQLiteDatabaseHelper(null, null, null, 1));
+        SQLiteDatabaseManager.initialize(new SQLiteDatabaseHelper(getApplicationContext()));
         SQLiteDatabaseManager manager = SQLiteDatabaseManager.getInstance();
 
         SQLiteDatabase database = manager.openDatabase();
