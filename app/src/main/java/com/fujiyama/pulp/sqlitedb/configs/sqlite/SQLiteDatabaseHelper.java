@@ -5,8 +5,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.annotation.Nullable;
 
+import com.fujiyama.pulp.sqlitedb.configs.sqlite.schema.DatabaseInfo;
+
 public class SQLiteDatabaseHelper extends SQLiteOpenHelper {
-    private static DatabaseSchema schema;
+    private static DatabaseInfo schema;
 
     public SQLiteDatabaseHelper(@Nullable Context context) {
         super(context, schema.getDatabaseName(), null, schema.getDatabaseVersion());
