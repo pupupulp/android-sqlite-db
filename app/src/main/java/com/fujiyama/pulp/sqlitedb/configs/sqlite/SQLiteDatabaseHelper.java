@@ -6,9 +6,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.support.annotation.Nullable;
 
 public class SQLiteDatabaseHelper extends SQLiteOpenHelper {
+    private static DatabaseSchema schema;
 
-    public SQLiteDatabaseHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
+    public SQLiteDatabaseHelper(@Nullable Context context) {
+        super(context, schema.getDatabaseName(), null, schema.getDatabaseVersion());
     }
 
     @Override
