@@ -38,6 +38,14 @@ public class SQLiteDatabaseHelper extends SQLiteOpenHelper {
     public void onConfigure(SQLiteDatabase db) {
         db.setForeignKeyConstraintsEnabled(true);
     }
+
+    @Override
+    public void onOpen(SQLiteDatabase db) {
+        super.onOpen(db);
+        if(!db.isReadOnly()) {
+            db.execSQL("PRAGMA foreign_keys=ON");
+        }
+    }
 }
 
 
