@@ -44,4 +44,8 @@ public class DatabaseManager {
             mSQLiteDatabase.close();
         }
     }
+
+    public synchronized boolean isDatabaseOpen() {
+        return (mSQLiteDatabase != null && mSQLiteDatabase.isOpen());
+    }
 }
