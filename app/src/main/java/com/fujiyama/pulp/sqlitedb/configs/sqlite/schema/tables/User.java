@@ -8,7 +8,7 @@ import android.support.annotation.NonNull;
 import java.math.BigInteger;
 
 @Entity(tableName = "USERS")
-public class Users {
+public class User {
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "ID")
@@ -18,7 +18,7 @@ public class Users {
     @ColumnInfo(name = "FULL_NAME")
     private String mFullName;
 
-    public Users(BigInteger mId, String mFullName) {
+    public User(BigInteger mId, String mFullName) {
         this.mId = mId;
         this.mFullName = mFullName;
     }
