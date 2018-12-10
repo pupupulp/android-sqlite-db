@@ -28,7 +28,7 @@ public class DatabaseManager {
     }
 
     public synchronized SQLiteDatabase openDatabase() {
-        mConnectionCounter++;
+        addOpenedConnections();
 
         if(mConnectionCounter == 1) {
             mSQLiteDatabase = mSQLiteDatabaseHelper.getWritableDatabase();
@@ -38,7 +38,7 @@ public class DatabaseManager {
     }
 
     public synchronized void closeDatabase() {
-        mConnectionCounter--;
+        reduceOpenedConnections();
 
         if(mConnectionCounter == 0) {
             mSQLiteDatabase.close();
@@ -47,5 +47,13 @@ public class DatabaseManager {
 
     public synchronized boolean isDatabaseOpen() {
         return (mSQLiteDatabase != null && mSQLiteDatabase.isOpen());
+    }
+
+    private synchronized void addOpenedConnections() {
+        mConnectionCounter++;
+    }
+
+    private synchronized void reduceOpenedConnections() {
+        mConnectionCounter--;
     }
 }
