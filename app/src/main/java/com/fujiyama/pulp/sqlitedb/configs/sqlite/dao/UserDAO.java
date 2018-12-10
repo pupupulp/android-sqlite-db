@@ -1,5 +1,6 @@
 package com.fujiyama.pulp.sqlitedb.configs.sqlite.dao;
 
+import android.arch.lifecycle.MutableLiveData;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.OnConflictStrategy;
@@ -19,5 +20,5 @@ public interface UserDAO {
     void deleteAll();
 
     @Query("SELECT * FROM USERS")
-    List<User> getAllUsers();
+    MutableLiveData<List<User>> getAllUsers();
 }
