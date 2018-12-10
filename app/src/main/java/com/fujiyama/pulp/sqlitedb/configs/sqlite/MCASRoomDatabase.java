@@ -18,7 +18,7 @@ public abstract class MCASRoomDatabase extends RoomDatabase {
 
     private static volatile MCASRoomDatabase instance;
 
-    static MCASRoomDatabase getInstance(final Context context) {
+    public static MCASRoomDatabase getInstance(final Context context) {
         if(instance == null) {
             synchronized (MCASRoomDatabase.class) {
                 if(instance == null) {
