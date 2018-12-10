@@ -3,23 +3,23 @@ package com.fujiyama.pulp.sqlitedb.configs.sqlite;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class SQLiteDatabaseManager {
-    private static final String TAG = SQLiteDatabaseManager.class.getSimpleName();
+public class DatabaseManager {
+    private static final String TAG = DatabaseManager.class.getSimpleName();
 
     private int mConnectionCounter;
 
-    private static SQLiteDatabaseManager instance;
+    private static DatabaseManager instance;
     private static SQLiteOpenHelper mSQLiteDatabaseHelper;
     private static SQLiteDatabase mSQLiteDatabase;
 
     public static synchronized void initialize(SQLiteOpenHelper helper) {
         if(instance == null) {
-            instance = new SQLiteDatabaseManager();
+            instance = new DatabaseManager();
             mSQLiteDatabaseHelper = helper;
         }
     }
 
-    public static synchronized SQLiteDatabaseManager getInstance() {
+    public static synchronized DatabaseManager getInstance() {
         if(instance == null) {
             throw new IllegalStateException(TAG + " is not initialized.");
         }

@@ -10,10 +10,10 @@ import android.util.Log;
 import com.fujiyama.pulp.sqlitedb.configs.sqlite.schema.DatabaseInfo;
 import com.fujiyama.pulp.sqlitedb.configs.sqlite.schema.tables.Sample;
 
-public class SQLiteDatabaseHelper extends SQLiteOpenHelper {
-    private static final String TAG = SQLiteDatabaseHelper.class.getSimpleName();
+public class DatabaseHelper extends SQLiteOpenHelper {
+    private static final String TAG = DatabaseHelper.class.getSimpleName();
 
-    public SQLiteDatabaseHelper(@Nullable Context context) {
+    public DatabaseHelper(@Nullable Context context) {
         super(context, DatabaseInfo.getDatabaseName(), null, DatabaseInfo.getDatabaseVersion());
     }
 
