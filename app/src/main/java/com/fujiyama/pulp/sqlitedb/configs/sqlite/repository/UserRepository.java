@@ -15,13 +15,13 @@ public class UserRepository {
     private UserDAO mUserDAO;
     private MutableLiveData<List<User>> mAllUsers;
 
-    UserRepository(Application application) {
+    public UserRepository(Application application) {
         MCASRoomDatabase database = MCASRoomDatabase.getInstance(application);
         mUserDAO = database.userDAO();
         mAllUsers = mUserDAO.getAllUsers();
     }
 
-    MutableLiveData<List<User>> getAllUsers() {
+    public MutableLiveData<List<User>> getAllUsers() {
         return mAllUsers;
     }
 

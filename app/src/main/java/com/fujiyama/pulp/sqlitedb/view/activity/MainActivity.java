@@ -1,4 +1,4 @@
-package com.fujiyama.pulp.sqlitedb.activities;
+package com.fujiyama.pulp.sqlitedb.view.activity;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
