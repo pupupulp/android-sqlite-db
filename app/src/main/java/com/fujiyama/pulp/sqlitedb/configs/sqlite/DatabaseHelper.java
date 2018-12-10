@@ -8,7 +8,6 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.fujiyama.pulp.sqlitedb.configs.sqlite.schema.DatabaseInfo;
-import com.fujiyama.pulp.sqlitedb.configs.sqlite.schema.tables.Sample;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String TAG = DatabaseHelper.class.getSimpleName();
@@ -20,7 +19,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         try {
-            db.execSQL(Sample.getCreateQuery());
+            // do queries
         } catch(SQLException e) {
             Log.d(TAG, " Error creating database " + e.getMessage());
         }
